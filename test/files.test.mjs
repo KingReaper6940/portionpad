@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {EXAMPLE} from '../src/example.mjs';import {normalize} from '../src/plan.mjs';import {projectJSON,parseProject,reportCSV,reportJSON,brief} from '../src/files.mjs';
+test('project round-trip preserves the editable inputs',()=>assert.deepEqual(parseProject(projectJSON(EXAMPLE)),normalize(EXAMPLE)));
+test('invalid and excessive JSON do not import',()=>{for(const s of ['{','null','{}',' '.repeat(50001)])assert.throws(()=>parseProject(s));});
+test('CSV quotes commas and protects formula-like fields',()=>{const p=structuredClone(EXAMPLE);p.rows[0].name=' =SUM(1,2)';p.rows[0].note='say "hello"';const csv=reportCSV(p);assert.ok(csv.includes('"\'=SUM(1,2)"'));assert.ok(csv.includes('"say ""hello"""'));});
+test('reports keep exact, shown, exceptions and arithmetic provenance',()=>{const p=structuredClone(EXAMPLE);p.rounding=1;p.target='1';const r=JSON.parse(reportJSON(p));assert.equal(r.rows[3].exact,'1/12');assert.equal(r.rows[3].delta,'-1/12');assert.ok(brief(p).includes('Review manually'));});

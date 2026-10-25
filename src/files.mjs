@@ -1,0 +1,7 @@
+import {normalize,plan} from './plan.mjs';
+export const projectJSON=input=>JSON.stringify(normalize(input),null,2)+'\n';
+export function parseProject(text){if(typeof text!=='string'||text.length>50000)throw new Error('Project JSON must be at most 50,000 characters.');let value;try{value=JSON.parse(text);}catch{throw new Error('Project is not valid JSON.');}if(value?.format!=='portionpad-v1')throw new Error('Not a Portionpad project.');return normalize(value);}
+export function reportJSON(input){return JSON.stringify(plan(input),null,2)+'\n';}
+const cell=value=>{let text=String(value??'');if(/^\s*[=+\-@]/u.test(text))text="'"+text;return '"'+text.replaceAll('"','""')+'"';};
+export function reportCSV(input){const r=plan(input);return [['Ingredient','Original','Unit','Policy','Exact','Shown','Difference','Note'],...r.rows.map(row=>[row.name,row.amount,row.unit,row.policy,row.exact??'',row.display,row.delta??'',row.note])].map(row=>row.map(cell).join(',')).join('\r\n')+'\r\n';}
+export function brief(input){const r=plan(input);return r.project.title+'\nScale factor: '+r.factor+'\nProportional servings: '+r.servings+'\n'+(r.project.rounding?'Shown amounts rounded to nearest 1/'+r.project.rounding+'.':'Exact amounts; no rounding.')+'\n\n'+r.rows.map(row=>row.name+': '+row.display+(row.unit?' '+row.unit:'')+' ['+row.policy+']'+(row.exact!==null?' | exact '+row.exact+' | difference '+row.delta:'')+(row.note?' — '+row.note:'')).join('\n')+'\n\nQuantity arithmetic only. Units unchanged; cooking method, time and equipment require a separate review.\n';}
