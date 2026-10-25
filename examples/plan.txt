@@ -1,0 +1,13 @@
+A small shared table
+Scale factor: 1 1/2
+Proportional servings: 6
+Exact amounts; no rounding.
+
+Flour: 375 g [scale] | exact 375 | difference 0 — Example quantities, not a tested recipe.
+Milk: 2 cups [scale] | exact 2 | difference 0
+Eggs: 3 eggs [scale] | exact 3 | difference 0 — Fractional eggs need a separate measuring decision.
+Spice: 1/2 tsp [scale] | exact 1/2 | difference 0
+Pan oil: 1 tbsp [hold] | exact 1 | difference 0 — Held at the original amount.
+Seasoning: Review manually [manual] — Decide separately.
+
+Quantity arithmetic only. Units unchanged; cooking method, time and equipment require a separate review.

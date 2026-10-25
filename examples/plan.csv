@@ -1,0 +1,7 @@
+"Ingredient","Original","Unit","Policy","Exact","Shown","Difference","Note"
+"Flour","250","g","scale","375","375","0","Example quantities, not a tested recipe."
+"Milk","1 1/3","cups","scale","2","2","0",""
+"Eggs","2","eggs","scale","3","3","0","Fractional eggs need a separate measuring decision."
+"Spice","1/3","tsp","scale","1/2","1/2","0",""
+"Pan oil","1","tbsp","hold","1","1","0","Held at the original amount."
+"Seasoning","","","manual","","Review manually","","Decide separately."

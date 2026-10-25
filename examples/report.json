@@ -1,0 +1,126 @@
+{
+  "project": {
+    "format": "portionpad-v1",
+    "title": "A small shared table",
+    "base": "4",
+    "target": "6",
+    "mode": "servings",
+    "anchor": 0,
+    "available": "350",
+    "rounding": 0,
+    "rows": [
+      {
+        "name": "Flour",
+        "amount": "250",
+        "unit": "g",
+        "policy": "scale",
+        "note": "Example quantities, not a tested recipe."
+      },
+      {
+        "name": "Milk",
+        "amount": "1 1/3",
+        "unit": "cups",
+        "policy": "scale",
+        "note": ""
+      },
+      {
+        "name": "Eggs",
+        "amount": "2",
+        "unit": "eggs",
+        "policy": "scale",
+        "note": "Fractional eggs need a separate measuring decision."
+      },
+      {
+        "name": "Spice",
+        "amount": "1/3",
+        "unit": "tsp",
+        "policy": "scale",
+        "note": ""
+      },
+      {
+        "name": "Pan oil",
+        "amount": "1",
+        "unit": "tbsp",
+        "policy": "hold",
+        "note": "Held at the original amount."
+      },
+      {
+        "name": "Seasoning",
+        "amount": "",
+        "unit": "",
+        "policy": "manual",
+        "note": "Decide separately."
+      }
+    ]
+  },
+  "factor": "1 1/2",
+  "servings": "6",
+  "rows": [
+    {
+      "name": "Flour",
+      "amount": "250",
+      "unit": "g",
+      "policy": "scale",
+      "note": "Example quantities, not a tested recipe.",
+      "exact": "375",
+      "display": "375",
+      "delta": "0",
+      "roundedToZero": false
+    },
+    {
+      "name": "Milk",
+      "amount": "1 1/3",
+      "unit": "cups",
+      "policy": "scale",
+      "note": "",
+      "exact": "2",
+      "display": "2",
+      "delta": "0",
+      "roundedToZero": false
+    },
+    {
+      "name": "Eggs",
+      "amount": "2",
+      "unit": "eggs",
+      "policy": "scale",
+      "note": "Fractional eggs need a separate measuring decision.",
+      "exact": "3",
+      "display": "3",
+      "delta": "0",
+      "roundedToZero": false
+    },
+    {
+      "name": "Spice",
+      "amount": "1/3",
+      "unit": "tsp",
+      "policy": "scale",
+      "note": "",
+      "exact": "1/2",
+      "display": "1/2",
+      "delta": "0",
+      "roundedToZero": false
+    },
+    {
+      "name": "Pan oil",
+      "amount": "1",
+      "unit": "tbsp",
+      "policy": "hold",
+      "note": "Held at the original amount.",
+      "exact": "1",
+      "display": "1",
+      "delta": "0",
+      "roundedToZero": false
+    },
+    {
+      "name": "Seasoning",
+      "amount": "",
+      "unit": "",
+      "policy": "manual",
+      "note": "Decide separately.",
+      "exact": null,
+      "display": "Review manually",
+      "delta": null,
+      "roundedToZero": false
+    }
+  ]
+}
